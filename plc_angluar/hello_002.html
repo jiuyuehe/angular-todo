@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+        .text-warning {
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body ng-app="txtInput">
+
+<div ng-controller="TxtInputCtrl">
+
+    <span ng-class="{'text-warning': shouldWarn()}">
+        还剩：{{remaining()}}字
+    </span>
+
+    <div>
+
+        <textarea ng-model="message" id="" cols="30" rows="10">{{message}}</textarea>
+
+    </div>
+
+    <div>
+        <button ng-disabled="!hasValidLength()" ng-click="send()">send</button>
+        <button ng-click="clear()">clear</button>
+
+    </div>
+
+</div>
+
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="ctrl_module.js"></script>
+</body>
+</html>
